@@ -1,7 +1,13 @@
 <div class="container">
-  <form>
+  <form >
     <label for="name">Enter a username</label><br>
-    <input type="text" id="name" classs="form-control" placeholder="Username">
-    <button class="btn btn-outline-primary">Search</button>
+    <input type="text" id="name" classs="form-control" [(ngModel)]="userName" name = "userName" placeholder="Username">
+    <button class="btn btn-outline-primary" (click)="getData($event)">Search</button>
   </form>
+  <div class="row">
+    <div class="col-md-6">
+      {{user.id}}
+    </div>
+  </div>
 </div>
+
