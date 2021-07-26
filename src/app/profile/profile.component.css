@@ -1,0 +1,17 @@
+h1{
+  text-align: center;
+}
+
+.form{
+  text-align: center;
+  padding: 2rem;
+}
+
+.form-control{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card{
+  padding: 1rem;
+}
