@@ -1,18 +1,22 @@
 <div class="container">
-  <form>
+  <h1>GitHub_Search</h1>
+  <form class="form">
     <label for="name">Enter a username</label><br>
-    <input type="text" id="name" classs="form-control" [(ngModel)]="userName" name = "userName" placeholder="Username">
+    <input type="text" id="name" class="form-control" [(ngModel)]="userName" name = "userName" placeholder="Username">
     <button class="btn btn-outline-primary" (click)="getData($event)">Search</button>
   </form>
   <div class="row">
     <div class="col-md-6">
-      {{user.avatar_url}}
+      <img src="{{user.avatar_url}}">
     </div>
     <div class="col-md-6">
-      <p>{{user.name}}</p>
-      <p>{{user.id}}</p>
-      <p>{{user.followers}}</p>
-      <p>{{user.created_at}}</p>
+      <div class="card bg-info">
+        <p>Name: {{user.name}}</p>
+        <p>ID: {{user.id}}</p>
+        <p>Number of followers: {{user.followers}}</p>
+        <p>Number of public repositories: {{user.public_repos}}</p>
+        <p>Date created: {{user.created_at|date}}</p>
+      </div>
     </div>
   </div>
 </div>
