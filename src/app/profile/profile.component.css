@@ -15,3 +15,11 @@ h1{
 .card{
   padding: 1rem;
 }
+
+.header{
+  font-size:x-large;
+}
+
+.list {
+  margin:2rem;
+}
