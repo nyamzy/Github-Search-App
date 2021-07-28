@@ -3,7 +3,7 @@
   <form class="form">
     <label for="name">Enter a username</label><br>
     <input type="text" id="name" class="form-control" [(ngModel)]="userName" name = "userName" placeholder="Username">
-    <button class="btn btn-outline-primary" (click)="getData($event)">Search</button>
+    <button class="btn btn-primary" (click)="getData($event)">Search</button>
   </form>
   <div class="row">
     <div class="col-md-6">
@@ -20,13 +20,15 @@
     </div>
   </div>
   <div class="repo">
-    <button [hidden]="show" class="btn btn-outline-primary" (click)="getRepos($event)">View Repos</button>
-    <ul *ngFor="let repo of repos">
-      <div class="list">
-        <li class="header">{{repo.name}}</li>
-        <p>{{repo.description}}</p>
-      </div>
-    </ul>
+    <button [hidden]="show" class="btn btn-primary" (click)="getRepos($event)">View Repos</button>
+    <div [hidden]="show" class="card bg-danger">
+      <ul *ngFor="let repo of repos">
+        <div class="list">
+          <h2 class="header">{{repo.name}}</h2>
+          <p>{{repo.description}}</p>
+        </div>
+      </ul>
+    </div>
   </div>
 </div>
 
