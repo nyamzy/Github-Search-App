@@ -14,7 +14,9 @@ export class ProfileComponent implements OnInit {
 
     
   user:any = [];
+  repos:any = [];
   userName:string = ""
+  show = true
 
   constructor(private userService:UserService, private repoService:RepoService, private http:HttpClient){
    
@@ -25,11 +27,24 @@ export class ProfileComponent implements OnInit {
     this.userService.getUser(this.userName).subscribe(data=>{
       this.user = data
     })
+
+    this.repoService.getRepo(this.userName).subscribe(data=>{
+      this.repos = data
+    })
     
   }
   getData(userName){
     this.userService.getUser(this.userName).subscribe(data=>{
       this.user = data
+      this.show = !this.show
+    })
+  }
+
+  getRepos(userName){
+    this.repoService.getRepo(this.userName).subscribe(data=>{
+      this.repos = data
+      
+      
     })
   }
 }
