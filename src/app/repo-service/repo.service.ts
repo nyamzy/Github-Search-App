@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { IApiResponse } from "src/app/users";
+import { IRepos} from "src/app/repos";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,8 @@ export class RepoService {
 
   constructor(private http:HttpClient) { }
 
-  getUser(userName):Observable<IApiResponse[]>{
-    return this.http.get<IApiResponse[]>("https://api.github.com/users/"+userName+"/repos?acces_token=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")
+  getRepo(userName):Observable<IRepos[]>{
+    return this.http.get<IRepos[]>("https://api.github.com/users/"+userName+"/repos")
   }
 }
 
